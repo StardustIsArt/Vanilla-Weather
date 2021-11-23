@@ -1,0 +1,38 @@
+.container {
+  font-family: Roboto, arial, sans-serif;
+  padding: 15px;
+}
+
+.weather-wrapper {
+  margin: 30px auto;
+  border: solid 2px #dadde1;
+  border-radius: 10px;
+  max-width: 775px;
+  padding: 15px;
+}
+
+.weather {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 60px;
+}
+
+.temperature {
+  font-size: 55px;
+  display: inline;
+  vertical-align: top;
+}
+
+.city-info {
+  text-align: right;
+  vertical-align: top;
+}
+
+.city {
+  color: #b0b3b6;
+  font-weight: 400px;
+}
+
+ul {
+  list-style-type: none;
+}

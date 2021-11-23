@@ -15,17 +15,51 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Weather App</title>
+    <title>Vanilla Weather App</title>
   </head>
   <body>
-    <h1>New York</h1>
-    <div class="row">
-      <div class="col-6">
-        Monday 04:00, scattered clouds <br />
-        Humidity: 58%, Wind: 0.45km/h
+    <div class="container">
+      <div class="weather-wrapper">
+        <div class="row">
+          <div class="col-4">
+            <div class="weather">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="sunny"
+              />
+              <span class="temperature"> 7 </span>ºF/ºC
+            </div>
+          </div>
+          <div class="col-4">
+            <ul>
+              <li>Humidity: 58%</li>
+              <li>Wind: 0.45km/h</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <div class="city-info">
+              <h1 class="city">New York</h1>
+              <div class="temp-and-descrip">
+                <ul>
+                  <li>Monday 04:00</li>
+                  <li>Scattered clouds</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6"><i class="fab fa-cloudversify"></i>7 ºF/ºC</div>
     </div>
+    <small>
+      This project was coded by Samantha Yocius,
+      <a href="https://github.com/StardustIsArt/Vanilla-Weather"
+        >open-sourced of GitHub</a
+      >
+      and
+      <a href="https://vanilla-weather-application.netlify.app/">
+        hosted on Netlify</a
+      >
+    </small>
   </body>
 
   <script src="src/script.js"></script>
