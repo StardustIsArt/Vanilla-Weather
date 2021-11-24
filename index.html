@@ -20,26 +20,54 @@
   <body>
     <div class="container">
       <div class="weather-wrapper">
+        <div class="row search">
+          <div class="col-9">
+            <form class="search-input">
+                <input
+                type="search"
+                placeholder="Enter a city"
+                autocomplete="off"
+                class="form-control search-input"
+                />
+            </div>
+            <div class="col-3">
+                <input type="submit" class="btn btn-primary w-40" value="Search" />
+            </div>
+            </form>
+        </div>
         <div class="row">
           <div class="col-4">
             <div class="weather">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                 alt="sunny"
+                class="float left"
               />
-              <span class="temperature"> 7 </span>ºF/ºC
+              <div class="temperature">
+                <strong> 7 </strong>
+              </div>
+              <span class="units">
+                <a href="#" id="fahrenheit-link">ºF </a>|<a
+                  href="#"
+                  id="celsius-link"
+                >
+                  ºC</a
+                >
+              </span>
             </div>
           </div>
           <div class="col-4">
-            <ul>
-              <li>Humidity: 58%</li>
-              <li>Wind: 0.45km/h</li>
-            </ul>
+            <div class="weather-info">
+              <ul>
+                <li>Humidity: 58%</li>
+                <li>Wind: 0.45km/h</li>
+              </ul>
+            </div>
           </div>
           <div class="col-4">
             <div class="city-info">
               <h1 class="city">New York</h1>
-              <div class="temp-and-descrip">
+              <div class="time-and-descrip">
                 <ul>
                   <li>Monday 04:00</li>
                   <li>Scattered clouds</li>
@@ -49,17 +77,20 @@
           </div>
         </div>
       </div>
+      <small>
+        This project was coded by Samantha Yocius,
+        <a
+          href="https://github.com/StardustIsArt/Vanilla-Weather"
+          target="_blank"
+        >
+          open-sourced of GitHub
+        </a>
+        and
+        <a href="https://vanilla-weather-application.netlify.app/">
+          hosted on Netlify
+        </a>
+      </small>
     </div>
-    <small>
-      This project was coded by Samantha Yocius,
-      <a href="https://github.com/StardustIsArt/Vanilla-Weather"
-        >open-sourced of GitHub</a
-      >
-      and
-      <a href="https://vanilla-weather-application.netlify.app/">
-        hosted on Netlify</a
-      >
-    </small>
   </body>
 
   <script src="src/script.js"></script>
