@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>http://www.tianqiapi.com/api?version=v6&appid=18836634&appsecret=15tosfbF;
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Vanilla Weather App</title>
   </head>
   <body>
@@ -44,8 +44,8 @@
                 alt="sunny"
                 class="float left"
               />
-              <div class="temperature">
-                <strong> 7 </strong>
+              <div class="temperature" >
+                <strong id="temp"> 7 </strong>
               </div>
               <span class="units">
                 <a href="#" id="fahrenheit-link">ºF </a>|<a
@@ -60,18 +60,23 @@
           <div class="col-4">
             <div class="weather-info">
               <ul>
-                <li>Humidity: 58%</li>
-                <li>Wind: 0.45km/h</li>
+                <li>Humidity: <span id="humidity">
+
+                </span>%</li>
+                <li>Wind: <span id="wind"> 
+                  
+                </span>km/h</li>
               </ul>
             </div>
           </div>
           <div class="col-4">
             <div class="city-info">
-              <h1 class="city">New York</h1>
+              <h1 class="city" id="city"></h1>
               <div class="time-and-descrip">
                 <ul>
                   <li>Monday 04:00</li>
-                  <li>Scattered clouds</li>
+                  <li id="description"></li>
+                  <li>Feels like: <span id="feelsLike"></span></li>
                 </ul>
               </div>
             </div>
