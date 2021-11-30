@@ -23,12 +23,13 @@
       <div class="weather-wrapper">
         <div class="row search">
           <div class="col-9">
-            <form class="search-input">
+            <form id="search-form">
                 <input
                 type="search"
                 placeholder="Enter a city"
                 autocomplete="off"
                 class="form-control search-input"
+                id="cityInput"
                 />
             </div>
             <div class="col-3">
@@ -37,31 +38,31 @@
             </form>
         </div>
         <div class="row">
-          <div class="col-4">
+          <div class="col-5">
             <div class="weather">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                 alt="sunny"
-                class="float left"
+                id="icon"
+                width="85px"
               />
-              <div class="temperature" >
-                <strong id="temp"> 7 </strong>
+              <div class="temperature">
+                <strong id="temp"> </strong>
               </div>
               <span class="units">
-                <a href="#" id="fahrenheit-link">ºF </a>|<a
-                  href="#"
-                  id="celsius-link"
-                >
-                  ºC</a
-                >
+                <a href="#" id="celsius-link" class="active">
+                  ºC
+                  </a
+                >|
+                <a href="#" id="fahrenheit-link">ºF </a>
+                
               </span>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-3">
             <div class="weather-info">
               <ul>
                 <li>Humidity: <span id="humidity">
-
                 </span>%</li>
                 <li>Wind: <span id="wind"> 
                   
@@ -74,9 +75,9 @@
               <h1 class="city" id="city"></h1>
               <div class="time-and-descrip">
                 <ul>
-                  <li>Monday 04:00</li>
+                  <li id="dateTime"> </li>
                   <li id="description"></li>
-                  <li>Feels like: <span id="feelsLike"></span></li>
+                  <li>Feels like: <span id="feels-like"></span>C</li>
                 </ul>
               </div>
             </div>

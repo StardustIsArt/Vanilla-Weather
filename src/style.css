@@ -18,13 +18,12 @@
 }
 
 .weather img {
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: 5px;
 }
 
 .temperature {
   display: inline;
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
   font-size: 16px;
 }
@@ -38,12 +37,23 @@
 }
 
 .temperature strong {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 400;
+}
+
+.weather .active {
+  color: #dfdfdf;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather .active:hover {
+  text-decoration: none;
 }
 
 .weather-info {
   margin-top: 15px;
+  text-align: right;
 }
 
 .city-info {
@@ -58,6 +68,10 @@
 
 .time-and-descrip {
   color: #dfdfdf;
+}
+
+.row {
+  --bs-gutter-x: 1rem;
 }
 
 ul {
