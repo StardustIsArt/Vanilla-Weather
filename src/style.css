@@ -88,6 +88,10 @@
   font-size: 15px;
 }
 
+.weather-forcast-temperature-max {
+  color: aquamarine;
+}
+
 ul {
   list-style-type: none;
 }

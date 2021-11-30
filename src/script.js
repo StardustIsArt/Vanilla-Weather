@@ -19,7 +19,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -36,7 +37,7 @@ function displayForecast() {
         width="54"
       />
       <div class="weather-forcast-temperature">
-        <span class="weather-forcast-temperature-max">10º</span>
+        <span class="weather-forcast-temperature-max">18º</span>
         <span class="weather-forcast-temperature-min">12º</span>
       </div>
     </div>
@@ -47,25 +48,29 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e1f92b0f0a53fe657eb50521404f459d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
-
   let feelsLikeElement = document.querySelector("#feels-like");
-
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#dateTime");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}º`;
+  feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}ºC`;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -77,6 +82,8 @@ function displayTemperature(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
